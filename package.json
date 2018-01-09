@@ -1,0 +1,19 @@
+{
+  "name": "react-native-port-watchdog",
+  "version": "0.0.1",
+  "description": "Keeps port used by React Native packager revesed for devices listed in the config",
+  "bin": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fearmear/react-native-port-watchdog.git"
+  },
+  "author": "Dmitry K. <fearmear@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fearmear/react-native-port-watchdog/issues"
+  },
+  "homepage": "https://github.com/fearmear/react-native-port-watchdog#readme",
+  "dependencies": {
+    "usb": "^1.3.1"
+  }
+}
