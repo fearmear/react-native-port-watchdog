@@ -9,7 +9,7 @@ Keeps port used by React Native packager revesed for devices listed in the confi
 0. Install modules `yarn add react-native-port-watchdog npm-run-all`
 0. Add config file to project. See **config-example/.rnpwdrc.json**
 0. Add `.rnpwdrc.json` line to your **.gitignore**
-0. Make your "scripts" section in package.json to like something like this:
+0. Make your "scripts" section in **package.json** to look something like this:
 ```json
 {
   "scripts": {
