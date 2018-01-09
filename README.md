@@ -8,10 +8,9 @@ Keeps port used by React Native packager revesed for Android devices listed in t
 
 ## Usage
 
-0. Install modules `yarn add react-native-port-watchdog npm-run-all`
-0. Add config file to project. See **config-example/.rnpwdrc.json**
-0. Add `.rnpwdrc.json` line to your **.gitignore**
-0. Make your "scripts" section in **package.json** to look something like this:
+1. Install modules `yarn add react-native-port-watchdog npm-run-all`
+1. Add config file to project. See **config-example/.rnpwdrc.json**
+1. Make your **"scripts"** section in **package.json** look something like this:
 ```json
 {
   "scripts": {
@@ -23,6 +22,8 @@ Keeps port used by React Native packager revesed for Android devices listed in t
 ```
 
 Now run `yarn start`
+
+Consider adding `.rnpwdrc.json` line to your **.gitignore**
 
 ## TODO
 - Think of an easier way to create config file
