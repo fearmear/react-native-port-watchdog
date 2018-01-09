@@ -1,6 +1,8 @@
 # React Native Port Watchdog
 Keeps port used by React Native packager revesed for devices listed in the config
 
+![Screenshot](https://raw.githubusercontent.com/fearmear/react-native-port-watchdog/master/docs/screenshot.png)
+
 ## Prerequisites
 `adb` in your PATH
 
