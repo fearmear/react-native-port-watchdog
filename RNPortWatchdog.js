@@ -4,12 +4,11 @@ const path = require('path')
 const process = require('process')
 const child_process = require('child_process')
 
-require('pretty-error').start()
 const usb = require('usb')
 const jsonFormat = require('json-format')
 const isEqual = require('lodash.isequal')
 
-const { runConfigFileName, adbDeviceInitTimeout } = require('./config')
+const { defaultPort, runConfigFileName, adbDeviceInitTimeout } = require('./config')
 const defaultRunConfig = require('./defaultrc')
 
 const readFile = promisify(fs.readFile)
@@ -26,14 +25,16 @@ process.stdin.on('keypress', (str, key) => {
 })
 
 module.exports = class RNPortWatchdog {
-  constructor() {
+  constructor(options) {
     this.pressXHandler = this.pressXHandler.bind(this)
+    this.port = options.port || defaultPort
   }
   async start() {
     try {
       this.config = await this.readRunConfig()
       this.watchUsbDevices()
       console.log('Watchdog is up')
+      this.reversePort()
     } catch (e) {
       this.handleError(e)
     }
@@ -119,7 +120,9 @@ module.exports = class RNPortWatchdog {
     })
   }
   async reversePort(adbDeviceId) {
-    const cmd = adbDeviceId ? `adb -s ${adbDeviceId} reverse tcp:8081 tcp:8081` : 'adb reverse tcp:8081 tcp:8081'
+    const cmd = adbDeviceId ?
+      `adb -s ${adbDeviceId} reverse tcp:${this.port} tcp:${this.port}` :
+      `adb reverse tcp:${this.port} tcp:${this.port}`
     try {
       const { stderr } = await exec(cmd)
       if (stderr.length > 0) {
