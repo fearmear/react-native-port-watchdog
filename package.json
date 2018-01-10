@@ -1,6 +1,6 @@
 {
   "name": "react-native-port-watchdog",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "Keeps port used by React Native packager revesed for devices listed in the config",
   "bin": "./index.js",
   "repository": {
