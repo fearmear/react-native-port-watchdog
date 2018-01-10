@@ -9,7 +9,6 @@ Keeps port used by React Native packager revesed for Android devices listed in t
 ## Usage
 
 1. Install modules `yarn add react-native-port-watchdog npm-run-all`
-1. Add config file to project. See **config-example/.rnpwdrc.json**
 1. Make your **"scripts"** section in **package.json** look something like this:
 ```json
 {
@@ -25,5 +24,8 @@ Now run `yarn start`
 
 Consider adding `.rnpwdrc.json` line to your **.gitignore**
 
+## Advanced Configuration
+Set **"device.adbDeviceId"** from `adb devices` in **.rnpwdrc.json** file to associate reverse with specific device
+
 ## TODO
-- Think of an easier way to create config file
+- Think of an easier way to associate reverse with specific device
